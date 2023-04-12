@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+    background-color: bisque;
+}
+
+.App .all {
+    gap: 20px;
+    display: flex;
+}
+
+.App .all input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+}
+
+.App .all input:hover {
+    border: 1px dashed blue;
+}
+
+.App .all button {
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background-color: blue;
+}
+
+.App .all button:hover {
+    background-color: aquamarine;
+    color: black;
+}
+
+.App .all button:focus{
+    color: red;
+} 
+
+.App .um {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.App .um h1 {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.766);
+}
+
+.App .um h2 {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.553);
+}
