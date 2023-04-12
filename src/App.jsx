@@ -3,11 +3,6 @@ import "./app.css"
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 function App() {
-    // document.addEventListener('keydown', function (event) {
-    //     if (event.code == 'Enter') {
-    //         getNameAge()
-    //     }
-    // });
 
     const [data, setData] = useState([])
 
