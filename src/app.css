@@ -33,6 +33,7 @@
 .App .all button {
     width: 100px;
     border-radius: 10px;
+    padding: 10px;
     border: none;
     color: #fff;
     background-color: blue;
