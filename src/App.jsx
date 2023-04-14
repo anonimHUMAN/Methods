@@ -5,13 +5,13 @@ import { useRef } from "react";
 function App() {
     const [data, setData] = useState([])
 
+    useEffect(() => {
+        fetch("http://educationcrm.uz:3006/")
+            .then(res => res.json())
+            .then(data => setData(data.DATA))
+        setData(DATA)
+    }, [])
     function getAllUcer() {
-        useEffect(() => {
-            fetch("http://educationcrm.uz:3006/")
-                .then(res => res.json())
-                .then(data => setData(data.DATA))
-            setData(DATA)
-        }, [])
     }
     getAllUcer()
 
@@ -49,15 +49,16 @@ function App() {
 
     function change(id) {
         let currentUser = {
-            name: "Salimbek",
-            age: 12
+            name: inp1.current.value,
+            age: inp2.current.value
         }
         fetch(`http://educationcrm.uz:3006/${id}`, {
             method: "PUT",
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(currentUser)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setData(data))
         getAllUcer()
     }
 
@@ -69,7 +70,6 @@ function App() {
                 <button onClick={getNameAge}>Submit</button>
             </div>
             {data.map(item => {
-                console.log(item.id);
                 return (
                     <div key={item.id} className="um">
                         <h1 onClick={() => { change(item.id) }}>{item.name} »</h1>
